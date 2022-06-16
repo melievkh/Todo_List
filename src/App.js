@@ -15,7 +15,6 @@ function App() {
     setInput(e.target.value);
   };
 
-
   const updateTodo = (title, id, completed) => {
     const newTodo = todos.map((todo) => {
       if (todo.id === id) return { title, id, completed };
@@ -27,7 +26,7 @@ function App() {
 
   useEffect(() => {
     if (editTodo) setInput(editTodo.title);
-     else {
+    else {
       setInput("");
     }
   }, [setInput, editTodo]);
@@ -70,7 +69,7 @@ function App() {
               value={input}
               onChange={onInputChange}
             />
-            <button type="submit">add</button>
+            <button type="submit">{editTodo ? "OK" : "Add"}</button>
           </form>
           <hr />
         </Adding>
